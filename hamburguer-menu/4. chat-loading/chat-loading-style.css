@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #242424;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.chatbox{
+    display: flex;
+    height: 50px;
+    width: 100px;
+    border: 4px solid #837f7f;
+    border-radius: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    transform: translateY(0);
+    animation: checkboxAnimation 2s ease-in-out infinite;
+}
+.chatbox::before{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 20px;
+    bottom: -18px;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #837f7f;
+}
+.dot{
+    height: 10px;
+    width:10px;
+    background-color: #837f7f;
+    border-radius: 50%;
+    transform: scale(1);
+}.dot:nth-child(1){
+    animation: dotsAnimation 1s linear infinite;
+}
+.dot:nth-child(2){
+    animation: dotsAnimation 1s linear 0.2s infinite;
+}
+.dot:nth-child(3){
+    animation: dotsAnimation 1s linear 0.4s infinite;
+}
+@keyframes dotsAnimation{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    40%{
+        transform: scale(1);
+    }
+}
+@keyframes checkboxAnimation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
